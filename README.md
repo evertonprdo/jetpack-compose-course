@@ -12,4 +12,4 @@ Learn how to use Jetpack Compose to build native Android UI! You’ll see how Co
 -  [ ] **Accessibility, testing, and performance:** Make your app accessible for all users, improve performance, and write automated tests.
 -  [ ] **Form factors:** Use Compose to develop apps for multiple screen formats and device types.
 
-link: https://developer.android.com/courses/jetpack-compose/course
+Course link: https://developer.android.com/courses/jetpack-compose/course
