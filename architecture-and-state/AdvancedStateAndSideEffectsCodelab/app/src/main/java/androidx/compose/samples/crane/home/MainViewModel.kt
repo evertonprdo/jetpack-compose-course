@@ -23,6 +23,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -35,6 +38,15 @@ class MainViewModel @Inject constructor(
     private val destinationsRepository: DestinationsRepository,
     @DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher
 ) : ViewModel() {
+    private val _suggestedDestinations =
+        MutableStateFlow<List<ExploreModel>>(emptyList())
+
+    val suggestedDestinations: StateFlow<List<ExploreModel>> =
+        _suggestedDestinations.asStateFlow()
+
+    init {
+        _suggestedDestinations.value = destinationsRepository.destinations
+    }
 
     val hotels: List<ExploreModel> = destinationsRepository.hotels
     val restaurants: List<ExploreModel> = destinationsRepository.restaurants
@@ -42,15 +54,14 @@ class MainViewModel @Inject constructor(
     fun updatePeople(people: Int) {
         viewModelScope.launch {
             if (people > MAX_PEOPLE) {
-            // TODO Codelab: Uncomment
-            //  _suggestedDestinations.value = emptyList()
+                _suggestedDestinations.value = emptyList()
             } else {
                 val newDestinations = withContext(defaultDispatcher) {
                     destinationsRepository.destinations
                         .shuffled(Random(people * (1..100).shuffled().first()))
                 }
-                // TODO Codelab: Uncomment
-                //  _suggestedDestinations.value = newDestinations
+
+                _suggestedDestinations.value = newDestinations
             }
         }
     }
@@ -61,8 +72,8 @@ class MainViewModel @Inject constructor(
                 destinationsRepository.destinations
                     .filter { it.city.nameToDisplay.contains(newDestination) }
             }
-            // TODO Codelab: Uncomment
-            //  _suggestedDestinations.value = newDestinations
+
+            _suggestedDestinations.value = newDestinations
         }
     }
 }
