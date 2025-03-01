@@ -44,5 +44,14 @@
 05 mins - video: How Compose improves UI testing
 05 mins - video: Add accessibility features to your app
 39 mins - codelab: Accessibility in Jetpack Compose
+07 mins - video: Debugging recomposition
+21 mins - video: Performance Gotchas
+20 mins - video: More performance tips
+**total: 142 mins | 2h22**
+
+## Pathway 5: Form factors
+
+14 mins - video: Implementing Android apps for all screen sizes
+36 mins - codelab: Build adaptive apps with Jetpack Compose
 
 Note: Time estimates are those provided by android
