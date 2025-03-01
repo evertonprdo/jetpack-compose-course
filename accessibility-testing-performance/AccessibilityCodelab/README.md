@@ -3,6 +3,8 @@
 This folder contains the source code for
 the [Accessibility in Jetpack Compose Codelab](https://developer.android.com/codelabs/jetpack-compose-accessibility)
 
+![App Screen](screenshots/img.png)
+
 ## License
 
 ```
