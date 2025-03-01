@@ -67,7 +67,6 @@ android {
 
 
 dependencies {
-    // TODO: Review Dependencies
     def composeBom = platform(libs.androidx.compose.bom)
 
     // General compose dependencies
