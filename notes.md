@@ -1,3 +1,8 @@
+# Jetpack Compose for Android Developers
+
+**Estimated time: 874mins | 14h34**
+Note: Time estimates are those provided by android
+
 ## Pathway 1: Compose essentials
 
 07 mins - video: Thinking in Compose
@@ -53,5 +58,7 @@
 
 14 mins - video: Implementing Android apps for all screen sizes
 36 mins - codelab: Build adaptive apps with Jetpack Compose
-
-Note: Time estimates are those provided by android
+23 mins - video: Compose for Wear OS introduction
+52 mins - codelab: Compose for Wear OS Codelab
+-- mins - article: Compose and Glance for remote surfaces
+**total: 125mins | 2h05**
